@@ -1,10 +1,41 @@
+## 20201202
+
+- 踩坑
+
+  1、如何让占位元素不显示，但是hover操作的时候配合动画出现
+
+  ```scss
+  .target-ele {
+    opacity: 0;
+  }
+  .target-ele:hover {
+    opacity: 1;
+  }
+  ```
+
+  2、突然发现filter 属性可以做整个网站元素蒙层
+
+  兼容性除了IE，其他浏览器貌似都ok
+
+  https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter
+
+  ```css
+  * {
+    filter: grayscale(80%);
+  }
+  ```
+
+  
+
 ## 20201201
 
 - 问题
 
   1、为什么在动画效果里【visibility: visible】无法让原先【visibility: hidden;】的元素显示出来？
 
-  2、动画对于元素的变化是哪种层面的？
+  <font color="coral">因为【visibility: hidden】的元素本身不可点击，所以hover操作中添加动画，添加【visibility: visible】都是无法响应的</font>
+
+  ~~2、动画对于元素的变化是哪种层面的？~~
 
   3、关于background https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
 
