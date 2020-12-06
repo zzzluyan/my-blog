@@ -1,3 +1,61 @@
+## 20201206
+
+- 踩坑
+
+  1、react-router相关的用法还是去https://reactrouter.com/web/api/Route/route-props这里看比较好
+
+  中文网版本没跟上
+
+  踩的第一个坑就是报错 TypeError: Cannot read property 'location' of undefined
+
+  原因就是4.0以上的版本，api大概，正确用法在英文官网上
+
+  2、react-router里用的是history模式，路径访问直接 域名/路径 即可，中间不需要#
+
+## 20201205
+
+- 踩坑
+
+  1、react function 中传入的props属性里，只有大写属性，会被当作组件去使用渲染
+
+  ```javascript
+  // 无效
+  function test({ content }) {
+    return <content />
+  }
+  
+  // 有效
+  function test({ Content }) {
+    return <Content />
+  }
+  ```
+
+  2、react中使用 lazy 函数一定要包裹一层函数 使用importMDX踩的坑
+
+  ```javascript
+  // 无效
+  const text = lazy(func());
+  
+  // 有效
+  const text = lazy(() => func());
+  ```
+
+  3、lazy 函数内要渲染的部分，一定要使用Suspense包裹，且必须携带fallback属性
+
+  ```react
+  function card({ Content }) {
+    return (
+      <Suspense fallback={<div>loading..</div>}>
+          <ContentCom />
+      </Suspense>
+    )
+  }
+  ```
+
+  
+
+  
+
 ## 20201202
 
 - 踩坑

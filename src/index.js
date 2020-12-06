@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from "../src/components/HomePage";
 import './index.css';
+import { RouterPage } from '../src/routes/RouterPage';
+import { router } from '../src/routes/routerMap';
+
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <HomePage />
+        {/* 做个路由组件 用react-router https://reactrouter.com/web/api/Route/route-render-methods */}
+        <RouterPage {...router}/>
     </React.StrictMode>,
     document.getElementById('root')
 );
