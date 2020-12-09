@@ -1,5 +1,7 @@
 import { Suspense } from "react";
+import { useHistory } from "react-router-dom"
 
+// 主页-文章卡片列表
 export default function ArticleList({ data }) {
     const list = data.map((item, index) => <ArticleCard {...item} key={index} />);
     return (
@@ -7,10 +9,12 @@ export default function ArticleList({ data }) {
     );
 }
 
-export function ArticleCard({ title, date, ContentCom, bgImg }) {
-    const toArticleDetail = () => {}
+export function ArticleCard({ title, date, ContentCom, bgImg, contentId }) {
+    const toArticleDetail = (id) => {
+        useHistory().push(`./article/${id}`)
+    }
     return (
-        <div className="article-card-container" onClick={toArticleDetail}>
+        <div className="article-card-container" onClick={toArticleDetail.bind(this, contentId)}>
             <div style={{background: "url("+bgImg+")"}} className="article-card-bg"></div>
             <div className="card-desc">
                 <div className="card-title">{title}</div>
@@ -24,3 +28,9 @@ export function ArticleCard({ title, date, ContentCom, bgImg }) {
         </div>
     );
 }
+
+// 文章页 - 文章列表
+export function ArticlePage({}) {}
+
+// 文章详情页（通过卡片点击 / 文章列表点击进入）
+export function ArticleDetail({}) {}

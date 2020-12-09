@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { RouterPage } from '../src/routes/RouterPage';
-import { router } from '../src/routes/routerMap';
+// import { router } from '../src/routes/routerMap';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
     <React.StrictMode>
         {/* 做个路由组件 用react-router https://reactrouter.com/web/api/Route/route-render-methods */}
-        <RouterPage {...router}/>
+        <RouterPage />
     </React.StrictMode>,
     document.getElementById('root')
 );
