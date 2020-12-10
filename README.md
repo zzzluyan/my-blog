@@ -47,6 +47,10 @@
     // ....
   }
   ```
+  
+  https://reactjs.org/docs/hooks-rules.html#explanation
+  
+  <font color="coral">官网里说明，hooks的调用顺序很重要，所以必须放在，条件 / 循环 / 函数 外层，因为react内部要分析联系前后两次组件render时hooks的调用返回，如果没有把hooks放在顶层，那么hooks调用顺序将会改变，整个调用栈顺序发生改变从而导致错误</font>
 
 ## 20201206
 
