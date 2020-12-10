@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { useHistory } from 'react-router-dom';
 
 // 主页-文章卡片列表
@@ -11,7 +11,6 @@ export default function ArticleList({ data }) {
 
 export function ArticleCard({ title, date, ContentCom, bgImg, contentId }) {
     let history = useHistory();
-    console.log(history);
     const toArticleDetail = (id) => {
         history.push(`./article/${id}`)
     }
@@ -35,4 +34,6 @@ export function ArticleCard({ title, date, ContentCom, bgImg, contentId }) {
 export function ArticlePage({ }) { }
 
 // 文章详情页（通过卡片点击 / 文章列表点击进入）
-export function ArticleDetail({ }) { }
+export function ArticleDetail({ }) {
+    return <div>hello world</div>
+}

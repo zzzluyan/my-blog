@@ -345,9 +345,6 @@ module.exports = function (webpackEnv) {
                     paths.appPackageJson,
                     reactRefreshOverlayEntry,
                 ]),
-                // new webpack.ProvidePlugin({
-                //     react: 'react'
-                // })
             ],
         },
         resolveLoader: {
@@ -549,6 +546,9 @@ module.exports = function (webpackEnv) {
             ],
         },
         plugins: [
+            new webpack.ProvidePlugin({
+                React: 'react'
+            }),
             // Generates an `index.html` file with the <script> injected.
             new HtmlWebpackPlugin(
                 Object.assign(
@@ -733,6 +733,6 @@ module.exports = function (webpackEnv) {
         },
         // Turn off performance processing because we utilize
         // our own hints via the FileSizeReporter
-        performance: false,
+        performance: false
     };
 };

@@ -1,3 +1,53 @@
+## 20201210
+
+- 踩坑
+
+  1、关于list数组使用map渲染组件
+
+  ```react
+  export function RouterPage() {
+      return (
+          <Router>
+              <Switch>
+                  {
+                      routers.map((item) => {
+                          return ( // map 如果使用{} 包裹函数返回的内容，一定要用return!
+                              <Route path={item.path} component={item.component} key={item.name}>
+                              </Route>
+                          )
+                      })
+                  }
+              </Switch>
+          </Router>
+      );
+  }
+  ```
+  
+- 问题
+
+  1、全局react的设置问题？？？为什么在我用run eject 把webpack的配置弹出来以后，全局react就失效了？？然后手动配置还不生效
+
+  <font color="coral">配置生效了，要写在顶层的plugins里</font>
+
+  2、使用useHistory
+
+  为什么
+  
+  ```react
+  import { useHistory } from 'react-router-dom';
+  export function ArticleCard({ title, date, ContentCom, bgImg, contentId }) {
+      let history = useHistory(); //为什么一定要放置组件顶层
+      const toArticleDetail = (id) => {
+          history.push(`./article/${id}`)
+      }
+      // 这样就不行 ？？ 就会报错
+      //const toArticleDetail = (id) => {
+      //    useHistory().push(`./article/${id}`)
+      //}
+    // ....
+  }
+  ```
+
 ## 20201206
 
 - 踩坑

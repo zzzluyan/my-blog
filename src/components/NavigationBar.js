@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function NavigationBar({ title = 'Title', barItems = [{ label: 'Label', value: 'Value' }] }) {
     return (
         <div className="nav-bar-container">

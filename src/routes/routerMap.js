@@ -1,12 +1,6 @@
 import HomePage from '../components/HomePage';
 import { ArticlePage, ArticleDetail } from '../components/Article';
 
-export const router = {
-    HomePage,
-    // ArticlePage,
-    // AtticleDetail
-};
-
 export const routers = [
     {
         name: 'homePage',

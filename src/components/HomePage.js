@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleList from './Article';
 import NavigationBar from './NavigationBar';
 import articleListData from '../blogs/index';
