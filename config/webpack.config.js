@@ -345,6 +345,9 @@ module.exports = function (webpackEnv) {
                     paths.appPackageJson,
                     reactRefreshOverlayEntry,
                 ]),
+                // new webpack.ProvidePlugin({
+                //     react: 'react'
+                // })
             ],
         },
         resolveLoader: {
